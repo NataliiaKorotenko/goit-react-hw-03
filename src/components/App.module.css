@@ -5,3 +5,10 @@
   text-align: center;
 }
 
+.container {
+  background-color: rgb(255,192,203);
+}
+
+.title{
+  color: rgb(128,0,128);
+}
