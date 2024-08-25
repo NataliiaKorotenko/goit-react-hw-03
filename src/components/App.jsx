@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import styles from '../components/App.module.css';
-import SearchBox from './SearchBox/SearchBox'
-import ContactList from './ContactList/ContactList'
+import ContactForm from './ContactForm/ContactForm'
+import SearchBox from './SearchBox/SearchBox';
+import ContactList from './ContactList/ContactList';
 import PhoneBook from './PhoneBook.json';
 
 function App() {
@@ -20,6 +21,12 @@ function App() {
     contact.name.toLowerCase().includes(searchValue.toLowerCase())
   );
 
+  const contactForm = (newContact) => {
+    setUserContact((prevContactList) => {
+      return [...prevContactList, newContact];
+    });
+  };
+
   const deleteContact = (id) => {
     setUserContact(prevContacts => prevContacts.filter(contact => contact.id !== id));
   };
@@ -28,6 +35,7 @@ function App() {
     <>
       <div className={styles.container}>
         <h1 className={styles.title}>Phonebook</h1>
+        <ContactForm contactForm={contactForm} />
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
   
         <ContactList userContact={filteredContacts} deleteContact={deleteContact} />

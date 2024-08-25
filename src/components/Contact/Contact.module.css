@@ -9,19 +9,19 @@
     border-radius: 4px;
   }
 
-  .contacWrapper{
+.contacWrapper{
     display: flex;
     flex-direction: column;
     gap: 5px;
 
   }
 
-  .contactUser{
+.contactUser{
     display: flex;
     align-items: center;
   }
 
-  .icon {
+.icon {
     margin-right: 5px;
     color: rgb(139,0,139);
   }
@@ -33,10 +33,15 @@ color: rgb(139,0,139)
 
 .contactNumber{
     color: rgb(75,0,130)
-
 }
 
 .deleteButton{
     background: rgb(139,0,139);
     color: rgb(216,191,216);
+}
+
+.deleteButton:hover,
+.deleteButton:focus{
+  background-color: rgb(153,50,204);
+  outline: transparent;
 }
