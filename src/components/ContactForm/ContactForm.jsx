@@ -13,7 +13,7 @@ const ContactSchema = Yup.object().shape({
     number: Yup.number()
     .min(7, "Too Short!")
     .required("Required!")
-    .matches(/^[0-9]+$/, "Enter a valid phone number!"),
+    .typeError("Please enter phone-number!"),
   });
   
   const initialValues = {
@@ -47,14 +47,14 @@ const ContactSchema = Yup.object().shape({
         <Form className={css.form}>
           <div className={css.inputForm}>
             <label className={css.inputLabel} htmlFor={nameFieldId}>Name</label>
-            <Field className={css.inputName} type="text" name="username" id={nameFieldId} />
-            <ErrorMessage name="username" component="span" />
+            <Field className={css.inputName} type="text" name='username' id={nameFieldId} />
+            <ErrorMessage className={css.inputMessage}  name="username" component="span" />
           </div>
   
           <div className={css.inputForm}>
             <label className={css.inputLabel} htmlFor={numberFieldId}>Number</label>
             <Field className={css.inputName} type="tel" name="number" id={numberFieldId} />
-            <ErrorMessage name="number" component="span" />
+            <ErrorMessage className={css.inputMessage} name="number" component="span" />
           </div>
   
   
