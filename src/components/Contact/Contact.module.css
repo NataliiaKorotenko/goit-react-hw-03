@@ -9,6 +9,23 @@
     border-radius: 4px;
   }
 
+  .contacWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+  }
+
+  .contactUser{
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    margin-right: 5px;
+    color: rgb(139,0,139);
+  }
+
 .contactName{
 
 color: rgb(139,0,139)

@@ -1,13 +1,24 @@
+import { FaUser, FaPhoneVolume } from "react-icons/fa6";
 import css from '../Contact/Contact.module.css';
 
 function Contact({ name, number, deleteContact, id }) {
   return (
     <li className={css.contactItem}>
-      <div>
+      <div className={css.contactWrapper}>
+      <div className={css.contactUser}>
+        <FaUser className={css.icon} size="16" />
         <p className={css.contactName}>{name}</p>
+      </div>
+       <div className={css.contactUser}> 
+        <FaPhoneVolume className={css.icon} size="16" />
         <p className={css.contactNumber}>{number}</p>
       </div>
-      <button onClick={() => deleteContact(id)} className={css.deleteButton}>Delete</button>
+      </div>
+      <button type="button"
+       onClick={() => deleteContact(id)} 
+       className={css.deleteButton}>
+        Delete
+        </button>
     </li>
   )
 }
